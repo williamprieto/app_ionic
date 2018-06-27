@@ -26,43 +26,48 @@
   </div>
 
   <div [ngSwitch]="opciones">
+
     <ion-list *ngSwitchCase="'iluminacion'">
-      <ion-item *ngFor="let bombillo of bombillos; let i = index">
-          <!-- para cambiar imagen desde una accion
-            <img [src]="img/avatar-cher.png" *ngIf="habitaciones.habitacion1">
-          <img src="img/avatar-cher.png" *ngIf="!habitaciones.habitacion1">
-        -->
-        <ion-icon [name]="bombillo.state ? 'ios-bulb' : 'ios-bulb-outline'" item-start [class.encendido]="bombillo.state" ></ion-icon>
-        <ion-label> {{bombillo.name}}</ion-label>
-        <ion-toggle [(ngModel)]='bombillo.state' (ionChange)='cambiarEstado(i, bombillo)' ></ion-toggle>
-      </ion-item>
-
-
-
+      <ion-item-sliding *ngFor="let bombillo of bombillos; let i = index">
+    
+        <!-- para cambiar imagen desde una accion
+                <img [src]="img/avatar-cher.png" *ngIf="habitaciones.habitacion1">
+              <img src="img/avatar-cher.png" *ngIf="!habitaciones.habitacion1">
+            -->
+        <ion-item>
+          <ion-icon [name]="bombillo.state ? 'ios-bulb' : 'ios-bulb-outline'" item-start [class.encendido]="bombillo.state"></ion-icon>
+          <ion-label> {{bombillo.name}}</ion-label>
+          <ion-toggle [(ngModel)]='bombillo.state' (ionChange)='cambiarEstado(i, bombillo)'></ion-toggle>
+        </ion-item>
+    
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="EliminarB(i,bombillo)"><ion-icon name="trash"></ion-icon></button>
+        </ion-item-options>
+    
+      </ion-item-sliding>
     </ion-list>
-
-    <ion-fab right bottom >
+      <!-- Escondiendo el botón de crear   -->
+    <ion-fab right bottom *ngIf="opciones == 'iluminacion'">
       <button ion-fab color="primary" (click)="CrearB()">+</button>
     </ion-fab>
 
 
     <ion-list *ngSwitchCase="'brillo'">
-        <ion-item *ngFor="let bombillo of bombillos; let i = index">
-            <!-- para cambiar imagen desde una accion
+      <ion-item *ngFor="let bombillo of bombillos; let i = index">
+        <!-- para cambiar imagen desde una accion
               <img [src]="img/avatar-cher.png" *ngIf="habitaciones.habitacion1">
             <img src="img/avatar-cher.png" *ngIf="!habitaciones.habitacion1">
           -->
-          <ion-label>{{bombillo.name}}
-          </ion-label>
-          <ion-range min="0" max="100" step="1" [(ngModel)]="bombillo.brightness" debounce="300" pin="true" (ionChange)="establecerBrillo(i, bombillo)">
-            <ion-icon small range-left name="sunny"></ion-icon>
-            <ion-icon range-right name="sunny"></ion-icon>
-          </ion-range>
-        </ion-item>
+        <ion-label>{{bombillo.name}}
+        </ion-label>
+        <ion-range min="0" max="100" step="1" [(ngModel)]="bombillo.brightness" debounce="300" pin="true" (ionChange)="establecerBrillo(i, bombillo)">
+          <ion-icon small range-left name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+      </ion-item>
 
 
     </ion-list>
   </div>
 
 </ion-content>
-

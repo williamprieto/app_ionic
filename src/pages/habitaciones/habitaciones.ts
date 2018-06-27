@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController,LoadingController,  NavParams } from 'ionic-angular';
 import { ToastController, ModalController } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 
@@ -25,6 +25,7 @@ export class HabitacionesPage {
     public navParams: NavParams,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
+    public loadingCtrl: LoadingController,
     private apiProvider: ApiProvider) {
   }
 
@@ -58,5 +59,14 @@ export class HabitacionesPage {
     });
     this.bombillos = this.apiProvider.bdBombillos;
   }
+
+  EliminarB(i, bombillo) :void{
+    console.log("Eliminando bombillo");
+    this.apiProvider.eliminarBombillo(i, bombillo);
+    this.bombillos = this.apiProvider.bdBombillos;
+
+    
+  }
+
 
 }
