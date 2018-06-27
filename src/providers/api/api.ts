@@ -25,6 +25,8 @@ export class ApiProvider {
 
   }
 
+  
+  
   guardarIP(ipAddress){
     this.ipAddress = ipAddress;
     localStorage.setItem('ipAddress', ipAddress);
