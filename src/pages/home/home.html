@@ -1,0 +1,37 @@
+
+<ion-header>
+    
+  <ion-navbar>
+    
+
+    <ion-title>
+      Control Domótica
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="abrirAlert()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+   
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <ion-card (click)="verHabitaciones()">
+    <img [src]="imgcasa"/>
+    <div class="card-title">Iluminación</div>
+  
+  </ion-card>
+
+  <ion-card (click)="verControl()">
+    <img [src]="imgcontrol"/>
+    <div class="card-title">Control de vehículo</div>
+    
+  </ion-card>
+
+  
+</ion-content>
+
+

@@ -1,0 +1,8 @@
+{
+  "name": "pruevaRaspberry",
+  "app_id": "ec1efef5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

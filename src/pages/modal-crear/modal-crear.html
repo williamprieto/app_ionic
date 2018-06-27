@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ModalCrearPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Crear bombillo</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closemodal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #crearHabitacion="ngForm" (ngSubmit)="CrearBombillo()">
+    <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input required type="text" id="name" name="name" [(ngModel)]="bombillo.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Pin</ion-label>
+      <ion-input required pattern="^[0-9]+$" type="number" id="pine" name="pine" [(ngModel)]="bombillo.pine"></ion-input>
+    </ion-item  >
+
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-input required type="text" id="description" name="description" [(ngModel)]="bombillo.description"></ion-input>
+    </ion-item>
+
+ </ion-list>
+    <button [disabled]="!crearHabitacion.form.valid" ion-button block>Crear</button>
+  </form>
+
+</ion-content>
