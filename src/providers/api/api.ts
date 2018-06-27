@@ -10,6 +10,9 @@ export class ApiProvider {
 
   constructor(public http: HttpClient) {
 
+
+
+    
     this.bdBombillos = JSON.parse(localStorage.getItem('bdBombillos'));
     if (!this.bdBombillos) {
       this.bdBombillos = [];
