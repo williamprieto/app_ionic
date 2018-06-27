@@ -1,4 +1,6 @@
-Proyecto de ionic
+<b>Proyecto de ionic</b>
+
+<br>
 npm install
 <br>
 agregar archivos<br>
