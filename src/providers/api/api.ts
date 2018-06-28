@@ -34,7 +34,7 @@ export class ApiProvider {
     var bdBombillosString = JSON.stringify(this.bdBombillos);
     localStorage.setItem('bdBombillos', bdBombillosString);
   }
-
+//hola hola
   cambiarEstado(indice: number, habitacion: IHabitacion) {
     this.bdBombillos[indice] = habitacion;
     var bdBombillosString = JSON.stringify(this.bdBombillos);
