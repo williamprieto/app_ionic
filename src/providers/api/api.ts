@@ -85,5 +85,10 @@ export class ApiProvider {
     var bdBombillosString = JSON.stringify(this.bdBombillos);
     localStorage.setItem('bdBombillos', bdBombillosString);
   }
+  actualizarBombillo(indice: number, habitacion: IHabitacion) {
+    this.bdBombillos.splice(indice, 1,habitacion)
+    var bdBombillosString = JSON.stringify(this.bdBombillos);
+    localStorage.setItem('bdBombillos', bdBombillosString);
+  }
 
 }

@@ -64,6 +64,19 @@ export class HabitacionesPage {
     console.log("Eliminando bombillo");
     this.apiProvider.eliminarBombillo(i, bombillo);
     this.bombillos = this.apiProvider.bdBombillos;
+   
+  }
+
+  ActualizarB(i, bombillo) :void{
+    console.log("Actualizando bombillo");
+   // this.apiProvider.eliminarBombillo(i, bombillo);
+   // this.bombillos = this.apiProvider.bdBombillos;
+   console.log({index:i,bombillo:bombillo});
+   let modalActualizarB = this.modalCtrl.create('ModalActualizarPage',{index:i,bombillo:bombillo});
+   modalActualizarB.onDidDismiss((data) => {
+    console.log(data); 
+   });
+   modalActualizarB.present();
 
     
   }

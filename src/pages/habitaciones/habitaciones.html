@@ -41,7 +41,13 @@
         </ion-item>
     
         <ion-item-options side="right">
-          <button ion-button color="danger" (click)="EliminarB(i,bombillo)"><ion-icon name="trash"></ion-icon></button>
+          <button ion-button color="secondary" (click)="ActualizarB(i,bombillo)">
+            <ion-icon name="md-create"></ion-icon>
+          </button>
+          <button ion-button color="danger" (click)="EliminarB(i,bombillo)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+        
         </ion-item-options>
     
       </ion-item-sliding>
